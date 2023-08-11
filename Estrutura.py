@@ -33,7 +33,7 @@ def ExecutarAcao3():
 def Executar():
     terminarExecucao = False
     while not terminarExecucao: # enquanto terminar execucao for falso vai ficar no looping
-        acaoUsuario = EscolherOpcao()
+        acaoUsuario = EscolherOpcao() # vai armazenar na variavel o retorno da funçao EscolherOpção
         if (acaoUsuario == '1'):
             ExecutarAcao1()
         elif (acaoUsuario == '2'):
@@ -55,3 +55,7 @@ if __name__ == '__main__':
     Iniciar()
     Executar()
     Finalizar()
+
+#TO-DO 
+# ESTUDAR MODULAÇAO DE FUNÇÕES E ESCOPO DE CÓDIGO
+# TENTAR FAZER LISTA DE REVISÃO (NÃO PRECISA ENTREGAR)

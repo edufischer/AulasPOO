@@ -18,3 +18,6 @@ def ExibirBaseDados():
 
 # a) Visualizar base de dados: se escolhida esta opção, o programa deve mostrar ao usuário a tabela com todas as músicas
 ExibirBaseDados()
+
+#TO-DO
+# TENTAR FAZER LISTA DE REVISÃO (NÃO PRECISA ENTREGAR)

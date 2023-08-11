@@ -17,13 +17,18 @@ nome3 = input('Digite um nome: ') # variavel que vai guardar o valor do input do
 
 cumprimentar(nome3) # printa na dela a variavel que o usuario digitou anteriormente
 
-nomes = [ 'Ana', 'Pedro', 'Maria', 'Joao', 'Francisca'] # criação de uma lista
+nomes = [ 'Ana', 'Pedro', 'Maria', 'Joao', 'Francisca'] # criação de uma lista, ou seja, um vetor (array)
 
 for i in nomes:
-    cumprimentar(i) # i vai percorrer a lista nome pegando cada objeto dentro e chamando a função cumprimentar
+    cumprimentar(i) # i vai percorrer a lista nome pegando cada elemento dentro e chamando a função cumprimentar
 
 for i in range(len(nomes)): 
     # i vai percorrer o a funçao range que retorna um objeto com inicio da sequencia e o final
-    # ou seja, range(0,3)
+    # ou seja, range(0,5), seria um conjunto. vai ir do zero até o quatro.
     cumprimentar(nomes[i])
 
+
+
+#TO-DO:
+# ESTUDAR ESTRUTURAS DE DADOS NO PROXIMO SEMESTRE
+# linhas com i e j com colunas (primeiro linha e despois coluna)
