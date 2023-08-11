@@ -1,4 +1,5 @@
 import random
+import os #para chamar comandos do sistema
 
 baseDeDados = [
     ['Fa fe fi fo Funk',	'Anira', 'Funk', 2019, '3:05'],
@@ -10,29 +11,39 @@ baseDeDados = [
 
 playlist = []
 
+# Tasks das Funcoes
+
 
 def ExibirBaseDados():
     id = 0
-    for i in baseDeDados:
-        for j in i:
-            print (id, '\t',j, end = '\t')
-        id = id + 1
-        print() #quebra de linha
+    for linha in baseDeDados:
+        print(f'{id:<4}', end='')
+        for item in linha:
+            print(f'{item:<25}', end='')
+        print()  # Quebra de linha
+        id += 1
 
 def MontarPlayList():
-    musica_add = int(input('Digite o ID da música para adicionar a playlist: '))
-    musica_add = baseDeDados[musica_add]
-    if musica_add not in playlist:
-        playlist.append(musica_add)
-    else: print('Musica já está na playlist. Favor tente novamente outra música.')
-   
+    continuar = 'S'
+    while continuar == 'S':
+        musica_add = int(input('Digite o ID da música para adicionar a playlist: '))
+        musica_add = baseDeDados[musica_add]
+        if musica_add not in playlist:
+            playlist.append(musica_add)
+        else: print('Musica já está na playlist. Favor tente novamente outra música.')
+        continuar = input('Deseja continuar? S/N: ').upper()
+
 def VisualizarPlaylist():
     id = 0
-    for i in playlist:
-        for j in i:
-            print (id, '\t',j, end = '\t')
-        id = id + 1
-        print() 
+    for linha in playlist:
+        print(f'{id:<4}', end='')
+        for item in linha:
+            print(f'{item:<25}', end='')
+        print()  # Quebra de linha
+        id += 1
+
+def EmbaralharPlaylist():
+    random.shuffle(playlist) 
 
 def DuracaoTotal():
     tempos = []
@@ -41,39 +52,82 @@ def DuracaoTotal():
     for i in playlist:
         tempo = (i[4])
         tempos.append(tempo)
-    print(tempos)
 
     for i in tempos:
         minutos, segundos = map(int, i.split(":"))
         total_segundos += segundos
         total_minutos += minutos
-    print("Tempo total em minutos:", total_minutos, "e em segundos:",total_segundos)
-
+    print("Tempo total:", total_minutos, 'minutos e',total_segundos,'segundos')
 
 def ConsultarMusica():
-    index = 5
-    musica = input('Digite o nome da música: ')
+    musica = input('Digite o nome da música: ').lower().capitalize()
     for linha in baseDeDados:
         for nome in linha:
             if nome == musica:
-                print('O indice da musica no banco é: ', baseDeDados.index(linha))
-               
+                print('\nO indice da musica no banco é: ', baseDeDados.index(linha))
 
-# a) Visualizar base de dados: se escolhida esta opção, o programa deve mostrar ao usuário a tabela com todas as músicas
-ExibirBaseDados()
+def ConsultarBanda():
+    contador = 0
+    lista_indices = []
+    artista = input('Digite o nome do artista/banda: ').lower().capitalize()
+    for linha in baseDeDados:
+        for nome in linha:
+            if nome == artista:
+                contador += 1
+                indice = baseDeDados.index(linha)
+                lista_indices.append(indice)
+    print(f'Foram encontradas: {contador} músicas do artista/banda {artista}. Os índices das músicas são: {lista_indices}')
 
-# montar playlist
-MontarPlayList()
-MontarPlayList()
+# Programa abaixo
 
-#visualizar playlist
-VisualizarPlaylist()
+def Iniciar():
+    print()
+    print('Iniciando o programa...')
+    # Carregar ou ler dados de entrada
 
-#embaralhar playlist 
+def EscolherOpcao():
+    print()
+    print('1 - Visualizar Base de Dados do Spotify')
+    print('2 - Montar sua Playlist')
+    print('3 - Visualizar minha Playlist')
+    print('4 - Embaralhar minha Playlist')
+    print('5 - Mostrar tempo de duração da Playlist')
+    print('6 - Consultar música')
+    print('7 - Consultar por banda/artista')
+    print('0 -Sair\n')
+    resposta = input('Escolha uma opção: ')
+    os.system('cls'if os.name== 'nt'else'clear')
+    return resposta
 
-#mostrar duracao total da playlist, em minutos
-DuracaoTotal() 
+def Executar():
+    terminarExecucao = False
+    while not terminarExecucao: # enquanto terminar execucao for falso vai ficar no looping
+        acaoUsuario = EscolherOpcao()
+        if (acaoUsuario == '1'):
+            ExibirBaseDados()
+        elif (acaoUsuario == '2'):
+            MontarPlayList()
+        elif (acaoUsuario == '3'):
+            VisualizarPlaylist()
+        elif (acaoUsuario == '4'):
+            EmbaralharPlaylist()
+        elif (acaoUsuario == '5'):
+            DuracaoTotal()
+        elif (acaoUsuario == '6'):
+            ConsultarMusica()
+        elif (acaoUsuario == '7'):
+            ConsultarBanda()   
+        elif (acaoUsuario == '0'):
+            terminarExecucao = True #terminarExecucao é falso, logo vai sair do loop no proximo giro.
+        else:
+            print('Escolha invalida!Tente de novo.')
 
-#consultar musica
-ConsultarMusica()
-#consultar por banda/musica
+def Finalizar():
+    print('O programa foi encerrado!')
+    # Salvar dados, encerrar processos etc
+
+# Programa principal
+if __name__ == '__main__':
+    Iniciar()
+    Executar()
+    Finalizar()
