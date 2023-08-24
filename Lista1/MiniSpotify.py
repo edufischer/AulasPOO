@@ -112,6 +112,8 @@ def consultarMusica():
         print(f"\nO ID da música {musica.titulo} é: {indice}.")
         break
      else: indice+= 1
+    if nome != musica.titulo:
+        print(f'\nNão foi encontrada nenhuma música no banco de dados com o nome: {nome}')
 
 
 def consultarBanda():
