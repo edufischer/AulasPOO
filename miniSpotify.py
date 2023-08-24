@@ -65,6 +65,7 @@ def ConsultarMusica():
         for nome in linha:
             if nome == musica:
                 print('\nO indice da musica no banco é: ', baseDeDados.index(linha))
+            else: print(f'\nNão foi encontrada nenhuma música no banco de dados com o nome: {musica}')
 
 def ConsultarBanda():
     contador = 0
