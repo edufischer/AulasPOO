@@ -12,7 +12,9 @@ class Data:
         print(f"\nImprimindo na tela a data completa: {self.dia}/{self.mes}/{self.ano}.")
 
     def imprimirDataPorExtenso(self, cidade="Canoas"):
-        print(f"\nA data na cidade {cidade} é {self.dia}/{self.mes}/{self.ano}.\n")
+        meses = [None,'Janeiro','Feveiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
+        
+        print(f"\nA data na cidade {cidade} é {self.dia} de {meses[self.mes]} de {self.ano}.\n")
 
     def instanciarObjetoProprio():
         while True:
