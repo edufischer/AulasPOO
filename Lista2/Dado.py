@@ -5,7 +5,7 @@ class Dado:
     def __init__(self, numero):
         self.faces = int(numero)
 
-    def Rolar(self):
+    def rolar(self):
         contagem = 0
         while contagem != 3:
             if self.faces == 6:
@@ -26,20 +26,22 @@ class Dado:
                 contagem += 1
                 return numero
 
+
 dado_com_6_lados = Dado(6)
 dado_com_8_lados = Dado(8)
 dado_com_12_lados = Dado(12)
 
-dado_com_6_lados.Rolar()
-dado_com_6_lados.Rolar()
-dado_com_6_lados.Rolar()
-dado_com_8_lados.Rolar()
-dado_com_8_lados.Rolar()
-dado_com_8_lados.Rolar()
-
-dado_com_12_lados.Rolar()
-dado_com_12_lados.Rolar()
-dado_com_12_lados.Rolar()
+#print(f'Rolando dado de 6 lados... O resultado foi: {dado_com_6_lados.Rolar()}\n')
+#print(f'Rolando dado de 6 lados... O resultado foi: {dado_com_6_lados.Rolar()}\n')
+#print(f'Rolando dado de 6 lados... O resultado foi: {dado_com_6_lados.Rolar()}\n')
+#
+#print(f'Rolando dado de 8 lados... O resultado foi: {dado_com_8_lados.Rolar()}\n')
+#print(f'Rolando dado de 8 lados... O resultado foi: {dado_com_8_lados.Rolar()}\n')
+#print(f'Rolando dado de 8 lados... O resultado foi: {dado_com_8_lados.Rolar()}\n')
+#
+#print(f'Rolando dado de 12 lados... O resultado foi: {dado_com_12_lados.Rolar()}\n')
+#print(f'Rolando dado de 12 lados... O resultado foi: {dado_com_12_lados.Rolar()}\n')
+#print(f'Rolando dado de 12 lados... O resultado foi: {dado_com_12_lados.Rolar()}\n')
 
 #    Faça um programa que simule um "dado virtual". O dado deve ser modelado como uma classe,
 #possuindo apenas o número de faces e o método Rolar, que retorna o valor sorteado. O número

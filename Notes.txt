@@ -1,0 +1,19 @@
+ENCAPSULAMENTO - DEFINIR CLASSE E ATRIBUTOS
+
+
+OCULTAMENTOS  - VISIBLIDADE DOS ATRIBUITOS E METODOS:
+
+
+# EM PYTHON
+public = é o default
+
+
+private ( __name)
+    so é acessado via metodos setters ou getter 
+    métodos privados nao fazem parte do escopo da interface
+        a interface sao metodo publico que podem acessar e enviar infos
+
+
+protected ( _name)
+
+
