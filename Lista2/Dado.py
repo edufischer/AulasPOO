@@ -26,6 +26,13 @@ class Dado:
                 contagem += 1
                 return numero
 
+    #FUNÇAO ABAIXO UTILIZADA NO EXERCICIO DA CORRIDA MALUCA:
+    def rolarDadoSeisLados(self):
+                dadoComSeis = [1,2,3,4,5,6]
+                numero = secrets.choice(dadoComSeis) 
+                return numero
+    
+
 
 dado_com_6_lados = Dado(6)
 dado_com_8_lados = Dado(8)
