@@ -1,2 +1,2 @@
 Nome,Senha,Album
-<bound method Usuario.getNomeDeUsuario of <Usuario.Usuario object at 0x1002a4d90>>,<bound method Usuario.getSenhaDeUsuario of <Usuario.Usuario object at 0x1002a4d90>>,<bound method Usuario.getAlbum of <Usuario.Usuario object at 0x1002a4d90>>
+ed,123,"{'paginas': [], 'figurinhas': [], 'requisicoesTrocas': 0}"

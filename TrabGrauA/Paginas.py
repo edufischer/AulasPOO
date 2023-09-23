@@ -1,11 +1,11 @@
 from Figurinhas import Figurinha
 
 class Pagina:
-    def __init__(self,figurinhas=None,titulo=None):
-        self.figurinhas = Figurinha()
-        self.titulo = titulo
+    def __init__(self):
+        self.figurinhas = []
+        self.titulo = 0
         self.minNro = 1
-        self.minMaxNro = 133
+        self.maxNro = 133
 
     # Verifica se o argumento é uma instância do tipo 'type'
     def verificarTipo(self, tipo):
