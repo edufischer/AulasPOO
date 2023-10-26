@@ -28,3 +28,37 @@ def function_doubleasterix(**keywordargs):
 #No exemplo acima, keywordargs está associado a um dicionário como no programa abaixo.
 
 function_doubleasterix(SNo001 ='Alex', SNo002 ='Tom')
+
+
+
+
+
+def function_doubleasterix(**keywordargs):
+    # Imprime as chaves (nomes dos argumentos) do dicionário keywordargs.
+    print("The KEYS in the kwargs dicionary are -", keywordargs.keys())
+    
+    # Imprime os valores associados às chaves no dicionário keywordargs.
+    print("The VALUES in the kwargs dicionary are -", keywordargs.values())
+
+    # Imprime as atribuições de chave-valor no dicionário keywordargs.
+    print("--The key value assignment in the 'keywordargs' dictionary are as follows--")
+    for key, value in keywordargs.items():
+        print ("%s == %s" %(key, value))
+
+# Chamando a função function_doubleasterix com argumentos nomeados arbitrários.
+function_doubleasterix(SNo001 ='Alex', SNo002 ='Tom')
+
+#Quando você chama function_doubleasterix(SNo001='Alex', SNo002='Tom'), está passando dois argumentos nomeados (SNo001 e SNo002) para a função. Dentro da função, esses argumentos são tratados como um dicionário chamado keywordargs, onde as chaves são os nomes dos argumentos (SNo001 e SNo002), e os valores são os valores associados a essas chaves ('Alex' e 'Tom').
+
+#O código então imprime as chaves, os valores e as atribuições de chave-valor dentro desse dicionário keywordargs. No exemplo dado, a saída seria algo como:
+#
+#sql
+
+
+#The KEYS in the kwargs dicionary are - dict_keys(['SNo001', 'SNo002'])
+#The VALUES in the kwargs dicionary are - dict_values(['Alex', 'Tom'])
+#--The key value assignment in the 'keywordargs' dictionary are as follows--
+#SNo001 == Alex
+#SNo002 == Tom
+
+

@@ -83,8 +83,8 @@ class Pais:
 
     # e. Um método que retorne a densidade populacional do país;
     def getDensidade(self):
-        populacao = self.getPopulacao
-        dimensao = self.getDensidade
+        populacao = self.getPopulacao()
+        dimensao = self.getDimensao()
         densidade = populacao / dimensao
         return densidade 
 
