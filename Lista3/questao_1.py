@@ -99,17 +99,3 @@ class Pais:
                 nova_lista.append(pais)
                 
         return nova_lista
-
-# Usando valores padrao de argumentos
-pais01 = Pais()
-pais01.imprimirInfos()
-
-pais02 = Pais('BRA', 'Brasil')
-pais02.imprimirInfos()
-
-pais03 = Pais('BRA',2039494) #xiiiiiiii
-pais03.imprimirInfos()
-
-# Usando argumentos de palavra-chave
-pais04 = Pais('BRA',populacao=19293834848)
-pais04.imprimirInfos()
