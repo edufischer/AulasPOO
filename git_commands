@@ -1,0 +1,39 @@
+Passo 1: Abra o Terminal
+
+Se você estiver usando o GitHub Desktop, abra o prompt de comando integrado.
+Se você estiver usando o Git no seu terminal, abra o terminal ou prompt de comando onde você normalmente trabalha com o Git.
+Passo 2: Navegue para o seu repositório
+
+Use o comando cd para navegar para o diretório do seu repositório. Por exemplo:
+
+bash
+Copy code
+cd caminho/para/seu/repositório
+Passo 3: Verifique o histórico de commits
+
+Use o comando git log para listar o histórico de commits do seu repositório. Isso vai mostrar uma lista de commits com identificadores únicos (hashes) e mensagens de commit associadas.
+Passo 4: Encontre o commit anterior
+
+Role para baixo na lista e encontre o commit para o qual você deseja reverter. Anote o identificador único (hash) desse commit.
+Passo 5: Reverta para o commit anterior
+
+Use o comando git reset --hard seguido do hash do commit anterior para reverter o repositório para esse estado. Por exemplo:
+
+bash
+Copy code
+git reset --hard <hash_do_commit_anterior>
+Isso fará com que seu repositório local volte ao estado do commit escolhido e descartará todos os commits feitos após esse commit.
+
+Passo 6: Atualize o repositório remoto (opcional)
+
+Se você já fez um push dos commits que deseja desfazer, você também precisará atualizar o repositório remoto. Use o comando git push -f para forçar a atualização do repositório remoto. Tenha cuidado ao usar -f (force), pois isso pode reescrever o histórico do repositório remoto.
+
+bash
+Copy code
+git push -f origin branch_name
+Agora o seu repositório local e remoto devem estar revertidos para o commit anterior. Lembre-se de que reverter para um commit anterior pode ser uma operação destrutiva, então faça isso com cuidado, especialmente se você já compartilhou seu código com outras pessoas.
+
+
+
+
+
